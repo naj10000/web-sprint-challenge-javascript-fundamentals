@@ -16,7 +16,7 @@ function myFunction() {
 //myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+//nestedFunction(), can access the variable internal because it is within the same scope of myFunction()
 
 
 
@@ -30,10 +30,24 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  let sum = []
+  for(let i = num; i > 0; i--){
+      sum.push(i)
   }
+ 
+  console.log(sum)
+
+
+  let sumNum = sum.reduce((acc, num) => {
+    return acc + num
+  }, 0)
+  return sumNum
+  }
+  
+  console.log(summation(4))
+
+  // console.log(summation(4)) 
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -60,9 +74,18 @@ const zooAnimals = [
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(arr){
+    let newArr = []
+
+    arr.forEach((item, i)=> {
+       newArr.push(`name: ${item['animal_name']}, scientific: ${item['scientific_name']}`)
+    })
+
+    return newArr
+    
   }
+
+  console.log(animalNames(zooAnimals))
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
